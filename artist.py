@@ -45,6 +45,23 @@ class Artist:
             self.t.forward(size)
             self.t.left(144)
 
+    def Parallelgram(self, a = 100, b = 150):
+        for i in range(2):
+            self.t.forward(a)
+            self.t.left(30)
+            self.t.forward(b)
+            self.t.left(150)
+
+    def Cross(self, a = 80, b = 30):
+        for i in range(4):
+            self.t.forward(a)
+            self.t.left(90)
+            self.t.forward(b)
+            self.t.left(90)
+            self.t.forward(a)
+            self.t.right(90)
+        
+
         
 def main():
     canvas = turtle.Screen()
@@ -69,6 +86,12 @@ def main():
     art.Triangle()
     art.move(-10,-20)
     art.Star()
+    
+    art.move(100, -250)
+    art.Parallelgram()
+
+    art.move(200, 0)
+    art.Cross()
 
     #t.forward(150)
     #t.right(90)
