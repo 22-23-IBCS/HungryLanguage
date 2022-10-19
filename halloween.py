@@ -58,12 +58,15 @@ def main():
     originalSum = 0
     for i in range(5):
         housesTemp = []
+        temptemp = []
         for j in range(5):
             housesTemp.append(House())
             originalSum = originalSum + housesTemp[j].getRating()
+            temptemp.append(housesTemp[j].getRating())
         neighborhood.append(housesTemp)
+        print(temptemp)
 
-    print(neighborhood)
+    #print(neighborhood)
     
     x = int(input("Which house do you want to begin with? (Longitude)"))
     y = int(input("Which house do you want to begin with? (Latitude)"))
