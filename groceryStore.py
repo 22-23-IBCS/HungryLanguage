@@ -30,10 +30,22 @@ def main():
                "mask" : 0.50}
 
     gg = GroceryStore(catalog, "Chiu's Gas Station", "Chiu")
+
+    inventory = {"hi-chews" : 3,
+               "ice breakers" : 3,
+               "kit-kat" : 3,
+               "pen" : 3,
+               "instant noodle" : 3,
+               "haagan dazs" : 3,
+               "lip balm" : 3,
+               "starbucks" : 3,
+               "aquafina" : 3,
+               "lenyard" : 3,
+               "mask" : 3}
     
 
     while True:
-        op = int(input("\nWhat would you like to do?\n1) Products Available \n2) Make Purchase\n3) Speak to manager\nEnter -1 if done\n"))
+        op = int(input("\nWhat would you like to do?\n1) Products Available \n2) Make Purchase\n3) Speak to manager\n4) Check Inventory\nEnter -1 if done\n"))
         if op == -1:
             break
         if op == 1:
@@ -42,11 +54,16 @@ def main():
             toBuy = []
             while True:
                 res = input("What would you like to buy? Enter STOP if done\n")
-
+            
                 if res == "STOP":
                     break
                 else:
-                    toBuy.append(res.lower())
+                    if inventory.get(res.lower()) < 1:
+                        print("Sorry, we ran out of stock for those")
+                    else:
+                        temp = inventory.get(res.lower())
+                        inventory.update({res.lower() : temp - 1})
+                        toBuy.append(res.lower())
             
             
             print(toBuy)
@@ -54,6 +71,8 @@ def main():
             print("Total Amount: " + str(gg.purchase(toBuy)))
         if op == 3:
             gg.speak()
+        if op == 4:
+            print(inventory)
         
 
 
