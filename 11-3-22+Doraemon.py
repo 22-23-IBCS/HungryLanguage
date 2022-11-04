@@ -69,9 +69,13 @@ def main():
     c2.setFill("white")
     c2.draw(win)
 
-    ci = Circle(Point(400, 240), 30)
+    ci = Circle(Point(400, 240), 29)
     ci.setFill("red")
     ci.draw(win)
+
+    ci2 = Circle(Point(405, 233), 9)
+    ci2.setFill("white")
+    ci2.draw(win)
 
     l1 = Line(Point(400, 270), Point(400, 440))
     l1.draw(win)
@@ -95,7 +99,7 @@ def main():
     line6 = Line(Point(550, 370),Point(465, 350))
     line6.draw(win)
 
-    p = Oval(Point(370, 34), Point(430, 66))
+    p = Oval(Point(350, 30), Point(450, 70))
     p.setFill("#F3EAAF")
     p.setOutline("black")
     p.draw(win)
@@ -105,7 +109,7 @@ def main():
     q.setOutline("black")
     q.draw(win)
 
-    s = Rectangle(Point(399, 100), Point(401, 53))
+    s = Rectangle(Point(399, 100), Point(401, 54))
     s.setFill("yellow")
     s.draw(win)
 
