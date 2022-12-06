@@ -1,7 +1,7 @@
 import random
 
 def main():
-    L = [1,9,3,4,7,2,13,5,10,2]
+    L = [1,9,3,4]
     count = 0
     for i in range(len(L)):
         for j in range(len(L)-1):
@@ -12,7 +12,8 @@ def main():
                 count = count + 1
 
     print(L)
-    L = [1,9,3,4,7,2,13,5,10,2]
+    L = [1,9,3,4]
+    #L = [1,9,3,4,7,2,13,5,10,2]
     #random sort
     while True:
         maxPos = len(L)-2
@@ -21,6 +22,7 @@ def main():
         temp = L[randomPos]
         L[randomPos] = L[randomPos + 1]
         L[randomPos + 1] = temp
+        print(L)
 
         isSorted = True
         for i in range(len(L)-1):
